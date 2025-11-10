@@ -1,0 +1,167 @@
+title: Frontend Development Roadmap
+
+nodes:
+  - id: html
+    label: HTML
+    position: { x: 550, y: 150 }
+    resources:
+      - title: "HTML Crash Course for Beginners"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=UB1O30fR-EE"
+      - title: "MDN HTML Guide"
+        type: "Article"
+        url: "https://developer.mozilla.org/en-US/docs/Learn/HTML"
+      - title: "FreeCodeCamp HTML Certification"
+        type: "Course"
+        url: "https://www.freecodecamp.org/learn/responsive-web-design/"
+
+  - id: css
+    label: CSS (Learn one framework)
+    position: { x: 550, y: 260 }
+    resources:
+      - title: "CSS Crash Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=1Rs2ND1ryYc"
+      - title: "MDN CSS Reference"
+        type: "Article"
+        url: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+      - title: "Scrimba CSS Flexbox & Grid"
+        type: "Course"
+        url: "https://scrimba.com/learn/css"
+
+  - id: tailwind
+    label: Tailwind CSS 
+    position: { x: 50, y: 240 }
+
+  - id: bootstrap
+    label: Bootstrap 
+    position: { x: 50, y: 360 }
+
+  - id: vanilla
+    label: Vanilla CSS 
+    position: { x: 50, y: 460 }
+
+  - id: js
+    label: JavaScript
+    position: { x: 550, y: 370 }
+    resources:
+      - title: "JavaScript Full Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=PkZNo7MFNFg"
+      - title: "Eloquent JavaScript"
+        type: "Article"
+        url: "https://eloquentjavascript.net/"
+      - title: "FreeCodeCamp JavaScript Algorithms"
+        type: "Course"
+        url: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
+
+  - id: framework
+    label: JS Frameworks
+    position: { x: 550, y: 480 }
+    resources:
+      - title: "React JS Crash Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=w7ejDZ8SWv8"
+      - title: "React Docs"
+        type: "Article"
+        url: "https://react.dev/learn"
+      - title: "Next.js Learn Course"
+        type: "Course"
+        url: "https://nextjs.org/learn"
+
+  - id: react
+    label: React
+    position: { x: 1050, y: 450 }
+
+  - id: vue
+    label: Vue
+    position: { x: 1050, y: 550 }
+
+  - id: angular
+    label: Angular
+    position: { x: 1050, y: 650 }
+
+  - id: solid
+    label: Solid.js
+    position: { x: 1050, y: 750 }
+
+  - id: api
+    label: Working with APIs
+    position: { x: 550, y: 590 }
+    resources:
+      - title: "REST APIs Explained"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Q-BpqyOT3a8"
+      - title: "MDN Fetch API Guide"
+        type: "Article"
+        url: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+      - title: "RapidAPI for Beginners"
+        type: "Course"
+        url: "https://rapidapi.com/learn"
+
+  - id: git
+    label: Version Control (Git & GitHub)
+    position: { x: 550, y: 700 }
+    resources:
+      - title: "Git & GitHub Crash Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=RGOj5yH7evk"
+      - title: "Git Documentation"
+        type: "Article"
+        url: "https://git-scm.com/doc"
+      - title: "Learn Git Branching"
+        type: "Course"
+        url: "https://learngitbranching.js.org/"
+
+  - id: portfolio
+    label: Portfolio Project
+    position: { x: 550, y: 810 }
+    resources:
+      - title: "Build a Developer Portfolio Website"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=gYzHS-n2gqU"
+      - title: "Frontend Mentor Projects"
+        type: "Article"
+        url: "https://www.frontendmentor.io/"
+      - title: "Netlify & Vercel Deployment"
+        type: "Course"
+        url: "https://www.netlify.com/blog/deploy-a-site/"
+
+edges:
+  - from: html
+    to: css
+  - from: css
+    to: js
+  - from: js
+    to: framework
+  - from: framework
+    to: api
+  - from: api
+    to: git
+  - from: git
+    to: portfolio
+
+  # Framework subnodes (dashed)
+  - from: framework
+    to: react
+    style: dashed
+  - from: framework
+    to: vue
+    style: dashed
+  - from: framework
+    to: angular
+    style: dashed
+  - from: framework
+    to: solid
+    style: dashed
+
+  # CSS framework subnodes (dashed)
+  - from: css
+    to: tailwind
+    style: dashed
+  - from: css
+    to: bootstrap
+    style: dashed
+  - from: css
+    to: vanilla
+    style: dashed

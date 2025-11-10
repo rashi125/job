@@ -1,0 +1,121 @@
+title: Cybersecurity Roadmap
+
+nodes:
+  - id: cyber_basics
+    label: Cybersecurity Basics
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "Cybersecurity for Beginners"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=UqXx8FfNT4M"
+
+  - id: networking_security
+    label: Networking & Security
+    position: { x: 350, y: 200 }
+    resources:
+      - title: "Networking Security Basics"
+        type: "Article"
+        url: "https://www.cisco.com/c/en/us/products/security/what-is-network-security.html"
+
+  - id: protocols
+    label: Security Protocols & Firewalls
+    position: { x: 550, y: 200 }
+    resources:
+      - title: "Introduction to Firewalls"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=e6xBHyHq7po"
+      - title: "SSL/TLS Explained"
+        type: "Article"
+        url: "https://www.cloudflare.com/learning/ssl/what-is-ssl/"
+
+  - id: ethical_hacking
+    label: Ethical Hacking
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "Ethical Hacking Course"
+        type: "Course"
+        url: "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/"
+
+  - id: pentesting
+    label: Penetration Testing
+    position: { x: 350, y: 400 }
+    resources:
+      - title: "Penetration Testing Basics"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Zq9lN8Aqfuc"
+
+  - id: cybersecurity_tools
+    label: Tools & Techniques
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "Top Cybersecurity Tools"
+        type: "Article"
+        url: "https://www.sans.org/tools/"
+
+  - id: malware_analysis
+    label: Malware & Threat Analysis
+    position: { x: 750, y: 300 }
+    resources:
+      - title: "Malware Analysis Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=1VP-2hJ6c0c"
+      - title: "Cyber Threat Intelligence"
+        type: "Article"
+        url: "https://www.cisa.gov/threat-intelligence"
+
+  - id: incident_response
+    label: Incident Response & Monitoring
+    position: { x: 550, y: 500 }
+    resources:
+      - title: "Incident Response Guide"
+        type: "Article"
+        url: "https://www.sans.org/white-papers/incident-response/"
+      - title: "SIEM Tools Overview"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=dRFF-iRHldM"
+
+  - id: cloud_security
+    label: Cloud Security
+    position: { x: 750, y: 500 }
+    resources:
+      - title: "AWS Security Best Practices"
+        type: "Article"
+        url: "https://aws.amazon.com/architecture/security-best-practices/"
+      - title: "Azure Security Fundamentals"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=lzRkG9K4ENM"
+
+  - id: certifications
+    label: Cybersecurity Certifications
+    position: { x: 550, y: 600 }
+    resources:
+      - title: "CompTIA Security+ Guide"
+        type: "Article"
+        url: "https://www.comptia.org/certifications/security"
+      - title: "Certified Ethical Hacker (CEH)"
+        type: "Course"
+        url: "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/"
+
+edges:
+  - from: cyber_basics
+    to: networking_security
+  - from: cyber_basics
+    to: protocols
+  - from: networking_security
+    to: ethical_hacking
+  - from: protocols
+    to: malware_analysis
+  - from: ethical_hacking
+    to: pentesting
+  - from: ethical_hacking
+    to: malware_analysis
+  - from: pentesting
+    to: cybersecurity_tools
+  - from: malware_analysis
+    to: incident_response
+  - from: cybersecurity_tools
+    to: incident_response
+  - from: incident_response
+    to: cloud_security
+  - from: cloud_security
+    to: certifications

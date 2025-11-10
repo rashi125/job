@@ -1,0 +1,45 @@
+title: Blockchain Development Roadmap
+
+nodes:
+  - id: blockchain_basics
+    label: Blockchain Basics
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "Blockchain Explained"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=SSo_EIwHSd4"
+      - title: "Blockchain Beginner Guide"
+        type: "Article"
+        url: "https://www.ibm.com/topics/what-is-blockchain"
+
+  - id: cryptocurrencies
+    label: Cryptocurrencies & Tokens
+    position: { x: 550, y: 200 }
+    resources:
+      - title: "Bitcoin & Ethereum Overview"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Gc2en3nHxA4"
+
+  - id: smart_contracts
+    label: Smart Contracts
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "Solidity Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=ipwxYa-F1uY"
+
+  - id: dapps
+    label: DApps & Platforms
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "Building Decentralized Apps"
+        type: "Course"
+        url: "https://ethereum.org/en/developers/tutorials/"
+
+edges:
+  - from: blockchain_basics
+    to: cryptocurrencies
+  - from: cryptocurrencies
+    to: smart_contracts
+  - from: smart_contracts
+    to: dapps

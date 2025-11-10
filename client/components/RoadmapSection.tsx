@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface RoleCard {
   title: string;
@@ -6,6 +7,7 @@ interface RoleCard {
   icon: string;
   image: string;
   bgColor: string;
+  path: string; // <-- add path property
 }
 
 const roles: RoleCard[] = [
@@ -13,34 +15,43 @@ const roles: RoleCard[] = [
     title: "Software Engineer",
     description: "Develop and maintain software",
     icon: "💻",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
     bgColor: "from-orange-200 to-orange-300",
+    path: "/frontend", // 👈 goes to frontend roadmap
   },
   {
-    title: "Data Scientist",
+    title: "Data Analyst",
     description: "Analyze data for insights",
     icon: "📊",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
     bgColor: "from-blue-200 to-blue-300",
+    path: "/bianalyst", // 👈 goes to Data Analyst roadmap
   },
   {
     title: "Product Manager",
-    description: "Manager product development",
+    description: "Manage product development",
     icon: "📈",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
     bgColor: "from-green-200 to-green-300",
+    path: "/backend", // 👈 maybe backend or product roadmap
   },
   {
     title: "UI/UX Designer",
-    description: "Design user-friendly interface",
+    description: "Design user-friendly interfaces",
     icon: "🎨",
-    image: "https://images.unsplash.com/photo-1542171649-7847adc966b1?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1542171649-7847adc966b1?w=500&h=300&fit=crop",
     bgColor: "from-purple-200 to-purple-300",
+    path: "/frontend", // 👈 can be frontend or design roadmap
   },
 ];
 
 export const RoadmapSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"roles" | "skills">("roles");
+  const navigate = useNavigate();
 
   return (
     <section className="flex-1">
@@ -80,18 +91,18 @@ export const RoadmapSection: React.FC = () => {
           {roles.map((role, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              onClick={() => navigate(role.path)} // 👈 navigate to page
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:scale-105 transition-transform cursor-pointer"
             >
-              {/* Card Image */}
-              <div className={`h-40 bg-gradient-to-br ${role.bgColor} relative overflow-hidden`}>
+              <div
+                className={`h-40 bg-gradient-to-br ${role.bgColor} relative overflow-hidden`}
+              >
                 <img
                   src={role.image}
                   alt={role.title}
                   className="w-full h-full object-cover opacity-70"
                 />
               </div>
-
-              {/* Card Content */}
               <div className="p-4">
                 <h3 className="font-serif font-bold text-lg text-sidebar-foreground mb-2">
                   {role.title}

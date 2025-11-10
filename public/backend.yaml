@@ -1,0 +1,192 @@
+title: Backend Development Roadmap
+
+nodes:
+  - id: programming
+    label: Learn a Programming Language
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "Python Crash Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=rfscVS0vtbw"
+      - title: "Node.js Full Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Oe421EPjeBE"
+      - title: "Go for Beginners"
+        type: "Article"
+        url: "https://go.dev/learn/"
+
+  - id: language
+    label: Choose a Language
+    position: { x: 550, y: 200 }
+
+  - id: python
+    label: Python
+    position: { x: 200, y: 200 }
+
+  - id: nodejs
+    label: Node.js (JavaScript)
+    position: { x: 150, y: 300 }
+
+  - id: go
+    label: Go
+    position: { x: 900, y: 200 }
+
+  - id: web
+    label: Web Fundamentals
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "HTTP Crash Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=iYM2zFP3Zn0"
+      - title: "MDN HTTP Guide"
+        type: "Article"
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+      - title: "CORS Explained"
+        type: "Article"
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
+
+  - id: database
+    label: Databases
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "SQL vs NoSQL Explained"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=ZS_kXvOeQ5Y"
+      - title: "PostgreSQL Official Docs"
+        type: "Article"
+        url: "https://www.postgresql.org/docs/"
+      - title: "MongoDB University Courses"
+        type: "Course"
+        url: "https://learn.mongodb.com/"
+
+  - id: sql
+    label: SQL Databases
+    position: { x: 950, y: 500 }
+
+  - id: nosql
+    label: NoSQL Databases
+    position: { x: 950, y: 400 }
+
+  - id: framework
+    label: Backend Frameworks
+    position: { x: 550, y: 500 }
+    resources:
+      - title: "Express.js Docs"
+        type: "Article"
+        url: "https://expressjs.com/"
+      - title: "Django Tutorial"
+        type: "Course"
+        url: "https://docs.djangoproject.com/en/stable/intro/tutorial01/"
+      - title: "FastAPI Crash Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=0sOvCWFmrtA"
+
+  - id: express
+    label: Express.js
+    position: { x: 200, y: 500 }
+
+  - id: django
+    label: Django
+    position: { x: 200, y: 600 }
+
+  - id: fastapi
+    label: FastAPI
+    position: { x: 200, y: 700 }
+
+  - id: api
+    label: REST & GraphQL APIs
+    position: { x: 550, y: 600 }
+    resources:
+      - title: "REST API Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Q-BpqyOT3a8"
+      - title: "GraphQL Crash Course"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=ZQL7tL2S0oQ"
+      - title: "Postman API Testing"
+        type: "Course"
+        url: "https://www.postman.com/api-101"
+
+  - id: auth
+    label: Authentication & Security
+    position: { x: 550, y: 700 }
+    resources:
+      - title: "JWT Authentication Explained"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=7Q17ubqLfaM"
+      - title: "OWASP Security Basics"
+        type: "Article"
+        url: "https://owasp.org/www-project-top-ten/"
+      - title: "Helmet.js Security"
+        type: "Article"
+        url: "https://helmetjs.github.io/"
+
+  - id: deployment
+    label: Deployment & DevOps Basics
+    position: { x: 550, y: 800 }
+    resources:
+      - title: "Docker for Beginners"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=pTFZFxd4hOI"
+      - title: "CI/CD with GitHub Actions"
+        type: "Article"
+        url: "https://docs.github.com/en/actions"
+      - title: "Deploy on Render & Railway"
+        type: "Course"
+        url: "https://render.com/docs"
+
+  - id: scaling
+    label: Scaling & Optimization
+    position: { x: 550, y: 900 }
+    resources:
+      - title: "Load Balancing Explained"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=F5eaYK3ml_g"
+      - title: "Caching with Redis"
+        type: "Article"
+        url: "https://redis.io/docs/"
+      - title: "Microservices Architecture"
+        type: "Course"
+        url: "https://microservices.io/"
+
+edges:
+  - from: programming
+    to: language
+  - from: language
+    to: python
+    style: dashed
+  - from: language
+    to: nodejs
+    style: dashed
+  - from: language
+    to: go
+    style: dashed
+  - from: language
+    to: web
+  - from: web
+    to: database
+  - from: database
+    to: sql
+    style: dashed
+  - from: database
+    to: nosql
+    style: dashed
+  - from: database
+    to: framework
+  - from: framework
+    to: express
+    style: dashed
+  - from: framework
+    to: django
+    style: dashed
+  - from: framework
+    to: fastapi
+    style: dashed
+  - from: framework
+    to: api
+  - from: api
+    to: auth
+  - from: auth
+    to: deployment
+  - from: deployment
+    to: scaling

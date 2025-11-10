@@ -1,0 +1,52 @@
+title: Full-Stack Development Roadmap
+
+nodes:
+  - id: fs_basics
+    label: Programming & Web Fundamentals
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "Full-Stack Web Development Guide"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=3pLYvFQ1cVY"
+
+  - id: frontend
+    label: Frontend Development
+    position: { x: 550, y: 200 }
+    resources:
+      - title: "React JS Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Ke90Tje7VS0"
+
+  - id: backend
+    label: Backend Development
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "Node.js & Express.js Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Oe421EPjeBE"
+
+  - id: databases
+    label: Databases
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "SQL & NoSQL Overview"
+        type: "Article"
+        url: "https://www.geeksforgeeks.org/difference-between-sql-and-nosql/"
+
+  - id: deployment_fs
+    label: Deployment & DevOps
+    position: { x: 550, y: 500 }
+    resources:
+      - title: "Full-Stack Deployment Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=71wSzpLyW9k"
+
+edges:
+  - from: fs_basics
+    to: frontend
+  - from: frontend
+    to: backend
+  - from: backend
+    to: databases
+  - from: databases
+    to: deployment_fs

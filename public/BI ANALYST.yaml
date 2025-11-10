@@ -1,0 +1,125 @@
+title: Business Analyst Roadmap
+
+nodes:
+  - id: basics
+    label: Business Analysis Basics
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "Business Analysis Fundamentals"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Z8Fg8kLwz9A"
+      - title: "BABOK Guide Overview"
+        type: "Article"
+        url: "https://www.iiba.org/babok/"
+
+  - id: skills
+    label: Core BA Skills
+    position: { x: 550, y: 200 }
+    resources:
+      - title: "Communication & Stakeholder Management"
+        type: "Article"
+        url: "https://www.brighthubpm.com/business-analyst/117330-stakeholder-management-for-business-analysts/"
+      - title: "Critical Thinking for BAs"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=ZzA3L7p8EAs"
+
+  - id: requirements
+    label: Requirements Gathering
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "Techniques for Eliciting Requirements"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=W9wM0Tz9E6A"
+      - title: "Requirements Documentation Best Practices"
+        type: "Article"
+        url: "https://www.projectmanager.com/blog/requirements-gathering"
+
+  - id: modeling
+    label: Process & Data Modeling
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "UML for Business Analysts"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Yj2bXfVj9Xo"
+      - title: "Business Process Modeling"
+        type: "Article"
+        url: "https://www.visual-paradigm.com/guide/bpmn/what-is-business-process-modeling/"
+
+  - id: tools
+    label: BA Tools
+    position: { x: 550, y: 500 }
+    resources:
+      - title: "JIRA for Business Analysts"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=6hYGRg5HL_w"
+      - title: "Excel for Data Analysis"
+        type: "Article"
+        url: "https://www.excel-easy.com/data-analysis.html"
+      - title: "Lucidchart & Diagramming Tools"
+        type: "Course"
+        url: "https://www.lucidchart.com/pages/tutorial/uml-diagram"
+
+  - id: agile
+    label: Agile & Scrum
+    position: { x: 550, y: 600 }
+    resources:
+      - title: "Agile Business Analyst Role"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=_i5Xfh3kVFo"
+      - title: "Scrum Guide"
+        type: "Article"
+        url: "https://www.scrumguides.org/"
+
+  - id: documentation
+    label: Documentation & Reporting
+    position: { x: 550, y: 700 }
+    resources:
+      - title: "Writing Effective BRDs"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=xN1P6zA5h9o"
+      - title: "Business Analysis Reports"
+        type: "Article"
+        url: "https://www.brighthubpm.com/business-analyst/111496-how-to-create-business-analysis-reports/"
+
+  - id: analytics
+    label: Data Analytics & Visualization
+    position: { x: 550, y: 800 }
+    resources:
+      - title: "SQL for Business Analysts"
+        type: "Course"
+        url: "https://www.mode.com/sql-tutorial/"
+      - title: "Power BI Basics"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=AGrl-H87pRU"
+      - title: "Excel Data Visualization"
+        type: "Article"
+        url: "https://www.excel-easy.com/examples/charts.html"
+
+  - id: career
+    label: Career Growth & Certifications
+    position: { x: 550, y: 900 }
+    resources:
+      - title: "CBAP Certification Guide"
+        type: "Article"
+        url: "https://www.iiba.org/certification/cbap/"
+      - title: "Business Analyst Career Path"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Ej7zVST_VgM"
+
+edges:
+  - from: basics
+    to: skills
+  - from: skills
+    to: requirements
+  - from: requirements
+    to: modeling
+  - from: modeling
+    to: tools
+  - from: tools
+    to: agile
+  - from: agile
+    to: documentation
+  - from: documentation
+    to: analytics
+  - from: analytics
+    to: career

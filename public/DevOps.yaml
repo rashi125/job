@@ -1,0 +1,45 @@
+title: DevOps Roadmap
+
+nodes:
+  - id: devops_basics
+    label: DevOps Basics
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "DevOps for Beginners"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=0yWAtQ6wYNM"
+
+  - id: ci_cd
+    label: CI/CD
+    position: { x: 550, y: 200 }
+    resources:
+      - title: "CI/CD Pipeline Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=FtzNEdQu2gQ"
+
+  - id: containerization
+    label: Containerization & Orchestration
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "Docker for Beginners"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=pTFZFxd4hOI"
+      - title: "Kubernetes Basics"
+        type: "Article"
+        url: "https://kubernetes.io/docs/tutorials/kubernetes-basics/"
+
+  - id: monitoring
+    label: Monitoring & Logging
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "Prometheus & Grafana Basics"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=h4Sl21AKiDg"
+
+edges:
+  - from: devops_basics
+    to: ci_cd
+  - from: ci_cd
+    to: containerization
+  - from: containerization
+    to: monitoring

@@ -1,0 +1,52 @@
+title: Machine Learning Roadmap
+
+nodes:
+  - id: ml_basics
+    label: ML Basics & Python
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "Machine Learning for Beginners"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=Gv9_4yMHFhI"
+
+  - id: statistics_ml
+    label: Statistics & Mathematics
+    position: { x: 550, y: 200 }
+    resources:
+      - title: "Math for Machine Learning"
+        type: "Course"
+        url: "https://www.coursera.org/specializations/mathematics-machine-learning"
+
+  - id: data_preprocessing
+    label: Data Preprocessing & Feature Engineering
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "Feature Engineering Tutorial"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=2XbD8OKmDZE"
+
+  - id: algorithms
+    label: ML Algorithms
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "Supervised & Unsupervised Learning"
+        type: "Article"
+        url: "https://towardsdatascience.com/supervised-and-unsupervised-learning-14f68e32ea8d"
+
+  - id: deployment_ml
+    label: ML Deployment
+    position: { x: 550, y: 500 }
+    resources:
+      - title: "ML Model Deployment Guide"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=7eh4d6sabA0"
+
+edges:
+  - from: ml_basics
+    to: statistics_ml
+  - from: statistics_ml
+    to: data_preprocessing
+  - from: data_preprocessing
+    to: algorithms
+  - from: algorithms
+    to: deployment_ml
