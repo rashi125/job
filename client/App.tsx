@@ -18,6 +18,8 @@ import FullStack from "./pages/RoadMaps/FullStack";
 import DataAnalyst from "./pages/RoadMaps/DataAnalyst";
 import DevOps from "./pages/RoadMaps/DevOps";
 import ML from "./pages/RoadMaps/MachineLearning";
+import Login from "./pages/Login";
+import Signup from "./pages/SignUp";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           <Route path="/frontend" element={<Frontend/>}/>

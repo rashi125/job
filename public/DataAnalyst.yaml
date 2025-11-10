@@ -1,0 +1,42 @@
+title: Data Analyst Roadmap
+
+nodes:
+  - id: da_basics
+    label: Data Analysis Basics
+    position: { x: 550, y: 100 }
+    resources:
+      - title: "Data Analysis Fundamentals"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=rT7DgCr-3pg"
+
+  - id: excel_sql
+    label: Excel & SQL
+    position: { x: 550, y: 200 }
+    resources:
+      - title: "SQL Tutorial"
+        type: "Course"
+        url: "https://www.mode.com/sql-tutorial/"
+
+  - id: visualization
+    label: Data Visualization
+    position: { x: 550, y: 300 }
+    resources:
+      - title: "Power BI for Beginners"
+        type: "Video"
+        url: "https://www.youtube.com/watch?v=AGrl-H87pRU"
+
+  - id: statistics
+    label: Statistics & Analytics
+    position: { x: 550, y: 400 }
+    resources:
+      - title: "Statistics Fundamentals"
+        type: "Article"
+        url: "https://www.khanacademy.org/math/statistics-probability"
+
+edges:
+  - from: da_basics
+    to: excel_sql
+  - from: excel_sql
+    to: visualization
+  - from: visualization
+    to: statistics

@@ -74,7 +74,7 @@ export default function Roadmap({ yamlFile }: { yamlFile: string }) {
 
       <svg
         className="w-full h-full mt-0 justify-center"
-        viewBox="0 0 1200 1000"
+        viewBox="-200 -50 1600 1000"
         preserveAspectRatio="xMidYMid meet"
       >
         <defs>
@@ -129,10 +129,10 @@ export default function Roadmap({ yamlFile }: { yamlFile: string }) {
 
           const canvas = document.createElement("canvas");
           const ctx = canvas.getContext("2d");
-          ctx!.font = "bold 10px sans-serif";
+          ctx!.font = "bold 20px sans-serif";
           const textWidth = ctx!.measureText(node.label).width;
 
-          const paddingX = 40;
+          const paddingX = 30;
           const boxWidth = textWidth + paddingX * 4;
           const boxHeight = 60;
 

@@ -1,22 +1,47 @@
+// client/pages/Index.tsx
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "@/components/firebaseConfig";
 import { Sidenav } from "@/components/Sidenav";
 import { RoadmapSection } from "@/components/RoadmapSection";
 import { JobFinderSection } from "@/components/JobFinderSection";
 
 export default function Index() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        setUser(firebaseUser);
+      } else {
+        navigate("/login"); // redirect to login if not logged in
+      }
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, [navigate]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-lg font-medium text-gray-700">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Sidebar */}
-          <Sidenav />
+          <Sidenav user={user} />
 
           {/* Main Content */}
           <div className="flex-1 space-y-12">
-            {/* Roadmap Section */}
             <RoadmapSection />
-
-            {/* Job Finder Section */}
             <JobFinderSection />
           </div>
         </div>
