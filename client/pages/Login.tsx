@@ -23,7 +23,7 @@ export default function Login() {
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left section with image */}
       <div className="w-full md:w-1/2 bg-cover bg-center"
-        style={{ backgroundImage: "url('/city.jpg')" }}>
+        style={{ backgroundImage: "url('https://www.bing.com/th/id/OIP.vG2XLs0w2u2mKDXFcWnlRwHaEK?w=245&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&dpr=1.3&pid=3.1&rm=2&ucfimg=1')" }}>
         <div className="flex items-center justify-center h-full bg-black/40">
           <h1 className="text-3xl md:text-4xl text-white font-bold text-center px-6">
             Find Your Dream Jobs in Your Dream City...
