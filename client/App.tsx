@@ -19,7 +19,13 @@ import DataAnalyst from "./pages/RoadMaps/DataAnalyst";
 import DevOps from "./pages/RoadMaps/DevOps";
 import ML from "./pages/RoadMaps/MachineLearning";
 import Login from "./pages/Login";
+import Diary from "./pages/Dairy";
 import Signup from "./pages/SignUp";
+import Header from "@/components/navbar";
+import Chatbot from "./pages/chatbot";
+import CourseQuiz from "./pages/Coursequiz";
+import Progress from "./pages/Progress";
+
 
 const queryClient = new QueryClient();
 
@@ -29,22 +35,27 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Index />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-          <Route path="/frontend" element={<Frontend/>}/>
-        <Route path="/backend" element={<Backend />} />
-        <Route path="/Android" element={<Android />} />
-        <Route path="/Bianalyst" element={<Bianalyst />} />
-        <Route path="/Cybersecurity" element={<CyberSecurity/>} />
-        <Route path="/BlockChain" element={<BlockChain />} />
-        <Route path="/fullstack" element={<FullStack />} />
-        <Route path="/DataAnalyst" element={<DataAnalyst />} />
-        <Route path="/DevOps" element={<DevOps />} />
-        <Route path="/ML" element={<ML />} />
+          <Route path="/frontend" element={<Frontend />} />
+          <Route path="/backend" element={<Backend />} />
+          <Route path="/Android" element={<Android />} />
+          <Route path="/Bianalyst" element={<Bianalyst />} />
+          <Route path="/Cybersecurity" element={<CyberSecurity />} />
+          <Route path="/BlockChain" element={<BlockChain />} />
+          <Route path="/fullstack" element={<FullStack />} />
+          <Route path="/DataAnalyst" element={<DataAnalyst />} />
+          <Route path="/DevOps" element={<DevOps />} />
+          <Route path="/ML" element={<ML />} />
+          <Route path="/dashboard" element={<Diary />} />
+          <Route path="/scan" element={<Chatbot />} />
+          <Route path="/resources" element={<CourseQuiz />} />
+          <Route path="/reports" element={<Progress />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
