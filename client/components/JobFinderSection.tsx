@@ -66,14 +66,14 @@ export const JobFinderSection: React.FC = () => {
 
   return (
     <section className="flex-1 mt-12 md:mt-0">
-      <h2 className="font-serif font-bold text-3xl md:text-4xl text-sidebar-foreground mb-6">
+      <h2 className="font-serif font-bold text-3xl md:text-4xl text-white mb-6">
         Job Finder
       </h2>
 
       {/* Search Inputs */}
-      <div className="mb-8  justify-normal flex flex-col md:flex-row gap-x-0.5">
+      <div className="mb-8  justify-normal flex flex-col md:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-whit w-5 h-5" />
           <input
             type="text"
             placeholder="Job title or keyword"
@@ -99,7 +99,7 @@ export const JobFinderSection: React.FC = () => {
         </button>
       </div>
 
-      {error && <p className="text-red-500 mb-4">{error}</p>}
+      {error && <p className="text-white mb-4">{error}</p>}
 
       {/* Job Listings */}
       {loading && !error ? (
@@ -117,11 +117,11 @@ export const JobFinderSection: React.FC = () => {
                 <h3 className="font-serif font-bold text-xl text-gray-900 mb-1">
                   {job.title}
                 </h3>
-                <p className="text-sm text-gray-600 font-medium mb-3">
+                <p className="text-sm text-white font-medium mb-3">
                   {job.company}
                 </p>
-                <p className="text-sm text-gray-500 mb-4">📍 {job.location}</p>
-                <p className="text-sm text-gray-700 line-clamp-3 mb-4">
+                <p className="text-sm text-white mb-4">📍 {job.location}</p>
+                <p className="text-sm text-gray-50 line-clamp-3 mb-4">
                   {job.description
                     ? job.description.slice(0, 180) + "..."
                     : "No description available"}

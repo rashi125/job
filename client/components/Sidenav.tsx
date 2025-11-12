@@ -49,24 +49,24 @@ export const Sidenav: React.FC<SidenavProps> = ({ user }) => {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-full md:w-[440px] lg:w-[500px] bg-gradient-to-b from-indigo-500/20 via-purple-100/30 to-white/70 
-        backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-indigo-200/60 
+        className="w-full md:w-[440px] lg:w-[500px] bg-[#232023]
+        backdrop-blur-xl rounded-3xl p-20 shadow-2xl border border-white/40 hover:shadow-indigo-200/60 
         transition-all duration-300"
       >
         <div className="text-center mb-10">
           <motion.div
             whileHover={{ scale: 1.08 }}
-            className="w-36 h-36 mx-auto mb-4 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full 
+            className="w-40 h-36 mx-auto mb-4 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full 
             flex items-center justify-center shadow-lg border-4 border-white/60"
           >
             <span className="text-6xl text-white">👤</span>
           </motion.div>
 
-          <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-2xl font-extrabold text-white tracking-tight">
             {profile?.name || "User"}
           </h2>
-          <p className="text-sm text-gray-700">{profile?.email}</p>
-          <p className="text-xs mt-1 text-gray-500">{profile?.country || "Not added"}</p>
+          <p className="text-sm text-white">{profile?.email}</p>
+          <p className="text-xs mt-1 text-white">{profile?.country || "Not added"}</p>
 
           <div className="flex flex-col gap-3 mt-6">
             <button
@@ -125,8 +125,8 @@ const BadgeList = ({ list, color }: any) => (
     {(list || []).map((item: string, i: number) => (
       <span
         key={i}
-        className={`px-3 py-1 bg-${color}-100 text-${color}-700 rounded-full border border-${color}-300 
-        text-xs font-medium shadow-sm hover:shadow-md transition`}
+        className={`px-4 py-4 bg-${color}-100 text-${color}-700 rounded-full border border-${color}-300 
+        text-md text-center font-medium shadow-sm hover:shadow-md transition`}
       >
         {item}
       </span>

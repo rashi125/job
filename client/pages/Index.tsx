@@ -26,14 +26,14 @@ export default function Index() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-lg font-medium text-gray-700">
+      <div className="min-h-screen flex items-center justify-center text-lg font-medium text-gray-600">
         Loading...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background w-full">
+    <div className="min-h-screen bg-slate-800 w-full">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Sidebar */}

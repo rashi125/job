@@ -22,7 +22,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800">
+        <header className="sticky top-0 z-50 bg-[#322D31] dark:bg-background-dark/80 backdrop-blur-lg border-b dark:border-slate-800">
             <div className="container w-full gap-10 px-8 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo & Brand */}
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
                                 />
                             </svg>
                         </div>
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                        <h2 className="text-xl font-bold text-white dark:text-white">
                             CareerPath
                         </h2>
                     </div>
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
                             <a
                                 key={item}
                                 href={href}
-                                className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+                                className="text-md font-medium text-white dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
                             >
                                 {item}
                             </a>
@@ -73,11 +73,11 @@ const Header: React.FC = () => {
                             <>
                                 <div className="flex items-center gap-2">
                                     <img
-                                        src={user.photoURL || "https://www.shutterstock.com/image-vector/reaching-success-people-logo-icon-design-2617607515"}
+                                        src={user.photoURL || "https://th.bing.com/th/id/OIP.zi4Xf-NhgVgITYi_UTApDAHaHa?w=186&h=186&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1"}
                                         alt="User"
                                         className="w-10 h-10 rounded-full border"
                                     />
-                                    <span className="text-sm font-semibold text-slate-800 dark:text-white">
+                                    <span className="text-sm font-semibold text-white dark:text-white">
                                         {user.displayName || user.email}
                                     </span>
                                 </div>
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
                                 </button>
                                 <button
                                     onClick={() => navigate("/login")}
-                                    className="px-4 py-2 text-sm font-bold text-slate-800 dark:text-white bg-slate-200 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+                                    className="px-4 py-2 text-sm font-bold text-white dark:text-white bg-slate-200 dark:bg-slate-700 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
                                 >
                                     Log In
                                 </button>
@@ -108,13 +108,13 @@ const Header: React.FC = () => {
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden">
-                        <button className="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+                        <button className="p-2 rounded-md text-white dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
                             <svg
                                 className="h-6 w-6"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns="https://th.bing.com/th/id/OIP.zi4Xf-NhgVgITYi_UTApDAHaHa?w=186&h=186&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1"
                             >
                                 <path
                                     d="M4 6h16M4 12h16m-7 6h7"

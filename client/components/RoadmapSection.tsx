@@ -66,7 +66,7 @@ const roadmaps: RoadmapCard[] = [
     title: "Frontend Development",
     description: "Design interactive and responsive user interfaces.",
     icon: "🎨",
-    image: "https://images.unsplash.com/photo-1542171649-7847adc966b1?w=500&h=300&fit=crop",
+    image: "https://th.bing.com/th/id/OIP.AkbNGEjkC5Wj5SJfcYAu7AHaEK?w=302&h=180&c=7&r=0&o=7&cb=ucfimg2&dpr=1.3&pid=1.7&rm=3&ucfimg=1",
     bgColor: "from-pink-200 to-purple-300",
     path: "/frontend",
   },
@@ -119,7 +119,7 @@ export const RoadmapSection: React.FC = () => {
   return (
     <section className="w-full py-12">
       <div className="max-w-[1400px] mx-auto px-4">
-        <h2 className="font-serif font-bold text-3xl md:text-4xl text-sidebar-foreground mb-8">
+        <h2 className="font-serif font-bold text-3xl md:text-4xl text-white mb-8">
           Roadmaps
         </h2>
 
@@ -132,7 +132,7 @@ export const RoadmapSection: React.FC = () => {
               className={`pb-3 font-semibold text-lg transition-colors ${
                 activeTab === tab
                   ? "text-primary border-b-2 border-primary"
-                  : "text-sidebar-accent-foreground hover:text-sidebar-foreground"
+                  : "text-white hover:text-sidebar-foreground"
               }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
