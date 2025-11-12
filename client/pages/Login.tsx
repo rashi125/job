@@ -32,12 +32,12 @@ export default function Login() {
       </div>
 
       {/* Right section with form */}
-      <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-100">
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-iron-500">
         <form
           onSubmit={handleLogin}
-          className="bg-white p-8 rounded-2xl shadow-lg w-80"
+          className="bg-gray-400 p-8 rounded-2xl shadow-lg w-80"
         >
-          <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+          <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">
             Welcome to JobFinder
           </h2>
           <input

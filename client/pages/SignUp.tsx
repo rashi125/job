@@ -37,12 +37,12 @@ export default function Signup() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left section with form */}
-      <div className="w-full md:w-1/2 flex items-center justify-center bg-blue-900">
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-slate-600">
         <form
           onSubmit={handleSignup}
-          className="bg-white p-8 rounded-2xl shadow-lg w-80"
+          className="bg-slate-400 p-8 rounded-2xl shadow-lg w-80"
         >
-          <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+          <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">
             Sign Up
           </h2>
 
