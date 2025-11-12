@@ -86,27 +86,31 @@ export const JobFinderSection: React.FC = () => {
       </h2>
 
       {/* Search Input */}
-      <div className="mb-8 flex flex-col md:flex-row gap-4">
-        <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-          <input
-            type="text"
-            placeholder="Job title or keyword"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-            className="w-full pl-12 pr-4 py-3 rounded-lg border border-border bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-        </div>
-        <button
-          onClick={handleSearch}
-          disabled={loading}
-          className={`px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all ${loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-        >
-          {loading ? "Searching..." : "Search"}
-        </button>
-      </div>
+      {/* Search Input + Button */}
+<div className="mb-8 flex flex-col md:flex-row items-center gap-4 w-full">
+  <div className="relative w-full md:w-[80%]">
+    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
+    <input
+      type="text"
+      placeholder="Type a job title..."
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+      className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+    />
+  </div>
+
+  <button
+    onClick={handleSearch}
+    disabled={loading}
+    className={`w-full md:w-auto px-3 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-all ${
+      loading ? "opacity-50 cursor-not-allowed" : ""
+    }`}
+  >
+    {loading ? "Searching" : "Search"}
+  </button>
+</div>
+
 
       {error && <p className="text-red-500 mb-4">{error}</p>}
 
