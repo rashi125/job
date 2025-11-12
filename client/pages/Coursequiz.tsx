@@ -23,6 +23,41 @@ const quizBank: Record<
                 options: ["font-color", "color", "text-style", "background-color"],
                 answer: 1,
             },
+            {
+                question: "Which tag is used to insert an image in HTML?",
+                options: ["<image>", "<img>", "<picture>", "<src>"],
+                answer: 1,
+            },
+            {
+                question: "Which CSS property controls the size of text?",
+                options: ["font-weight", "text-size", "font-size", "text-style"],
+                answer: 2,
+            },
+            {
+                question: "Which HTML tag is used to create a hyperlink?",
+                options: ["<a>", "<link>", "<href>", "<nav>"],
+                answer: 0,
+            },
+            {
+                question: "What does CSS stand for?",
+                options: [
+                    "Colorful Style Sheets",
+                    "Cascading Style Sheets",
+                    "Computer Style Sheets",
+                    "Creative Style System",
+                ],
+                answer: 1,
+            },
+            {
+                question: "Which HTML tag is used for a line break?",
+                options: ["<break>", "<br>", "<lb>", "<line>"],
+                answer: 1,
+            },
+            {
+                question: "Which CSS property sets the background color?",
+                options: ["color", "background-color", "bgcolor", "fill"],
+                answer: 1,
+            },
         ],
         medium: [
             {
@@ -39,6 +74,36 @@ const quizBank: Record<
                     "JavaScript Syntax Extra",
                 ],
                 answer: 0,
+            },
+            {
+                question: "Which hook runs after every render in React?",
+                options: ["useMemo", "useEffect", "useRef", "useCallback"],
+                answer: 1,
+            },
+            {
+                question: "Which CSS property is used to make text bold?",
+                options: ["font-style", "font-weight", "text-decoration", "font-size"],
+                answer: 1,
+            },
+            {
+                question: "Which HTML tag is used to display tabular data?",
+                options: ["<data>", "<div>", "<table>", "<section>"],
+                answer: 2,
+            },
+            {
+                question: "In React, props are used to?",
+                options: [
+                    "Store component data",
+                    "Pass data to child components",
+                    "Handle side effects",
+                    "Manage state",
+                ],
+                answer: 1,
+            },
+            {
+                question: "Which CSS property controls the spacing inside an element?",
+                options: ["margin", "border", "padding", "spacing"],
+                answer: 2,
             },
         ],
         hard: [
@@ -62,6 +127,41 @@ const quizBank: Record<
                 ],
                 answer: 0,
             },
+            {
+                question: "What is React Fiber?",
+                options: [
+                    "A state management library",
+                    "A new reconciliation algorithm in React",
+                    "A CSS framework",
+                    "A React hook",
+                ],
+                answer: 1,
+            },
+            {
+                question: "Which React hook is used for performance optimization?",
+                options: ["useEffect", "useCallback", "useContext", "useReducer"],
+                answer: 1,
+            },
+            {
+                question: "What does 'key' prop help with in React lists?",
+                options: [
+                    "Performance and correct re-rendering",
+                    "Styling elements",
+                    "Managing hooks",
+                    "Handling events",
+                ],
+                answer: 0,
+            },
+            {
+                question: "What is the default port for a React app?",
+                options: ["3000", "5000", "8080", "4000"],
+                answer: 0,
+            },
+            {
+                question: "Which method is used to create context in React?",
+                options: ["createHook", "createState", "createContext", "createEffect"],
+                answer: 2,
+            },
         ],
     },
     backend: {
@@ -74,6 +174,36 @@ const quizBank: Record<
             {
                 question: "Which database uses SQL?",
                 options: ["MongoDB", "MySQL", "Firebase", "Redis"],
+                answer: 1,
+            },
+            {
+                question: "Which command starts a Node.js server?",
+                options: ["npm run dev", "npm start", "node server.js", "run node"],
+                answer: 2,
+            },
+            {
+                question: "Which database is NoSQL?",
+                options: ["PostgreSQL", "MongoDB", "MySQL", "SQLite"],
+                answer: 1,
+            },
+            {
+                question: "Which of these is not a backend framework?",
+                options: ["Express", "Django", "Flask", "React"],
+                answer: 3,
+            },
+            {
+                question: "What does API stand for?",
+                options: [
+                    "Application Programming Interface",
+                    "Applied Program Interaction",
+                    "Advanced Protocol Interface",
+                    "Application Process Integration",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Which protocol is used for web communication?",
+                options: ["FTP", "HTTP", "SMTP", "SSH"],
                 answer: 1,
             },
         ],
@@ -93,6 +223,36 @@ const quizBank: Record<
                 ],
                 answer: 0,
             },
+            {
+                question: "Which database is document-oriented?",
+                options: ["MySQL", "MongoDB", "PostgreSQL", "SQLite"],
+                answer: 1,
+            },
+            {
+                question: "What does 'npm' stand for?",
+                options: [
+                    "Node Package Manager",
+                    "Network Process Manager",
+                    "Node Project Manager",
+                    "Network Protocol Manager",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Which HTTP status code means 'Not Found'?",
+                options: ["400", "401", "404", "500"],
+                answer: 2,
+            },
+            {
+                question: "Which module handles file operations in Node.js?",
+                options: ["path", "fs", "http", "os"],
+                answer: 1,
+            },
+            {
+                question: "Which command initializes a Node.js project?",
+                options: ["node init", "npm create", "npm init", "node start"],
+                answer: 2,
+            },
         ],
         hard: [
             {
@@ -110,9 +270,45 @@ const quizBank: Record<
                 ],
                 answer: 0,
             },
+            {
+                question: "Which Node.js module handles HTTPS requests?",
+                options: ["fs", "path", "https", "dns"],
+                answer: 2,
+            },
+            {
+                question: "What does middleware do in Express?",
+                options: [
+                    "Handles requests and responses before final route",
+                    "Connects frontend and backend",
+                    "Compiles JavaScript",
+                    "Stores session data",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Which database supports ACID properties?",
+                options: ["MongoDB", "MySQL", "Firebase", "Cassandra"],
+                answer: 1,
+            },
+            {
+                question: "What is JWT mainly used for?",
+                options: [
+                    "Storing user data",
+                    "Authenticating users",
+                    "Creating APIs",
+                    "Encrypting databases",
+                ],
+                answer: 1,
+            },
+            {
+                question: "What is the default port for MongoDB?",
+                options: ["8080", "27017", "3000", "5000"],
+                answer: 1,
+            },
         ],
     },
 };
+
 
 export default function CourseQuiz() {
     const [course, setCourse] = useState("");
