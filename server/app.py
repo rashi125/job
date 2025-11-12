@@ -32,11 +32,11 @@ def ping():
 @app.route("/search", methods=["GET"])
 def search_jobs():
     keyword = request.args.get("what", "")
-    location = request.args.get("where", "")
+    
     page = request.args.get("page", 1, type=int)
 
-    if not keyword or not location:
-        return jsonify({"jobs": [], "message": "Please provide both keyword and location."})
+    if not keyword :
+        return jsonify({"jobs": [], "message": "Please provide both keyword "})
 
     # Adzuna API credentials
     app_id = os.environ.get("ADZUNA_APP_ID", "1505a86a")
@@ -49,7 +49,7 @@ def search_jobs():
         "app_key": app_key,
         "results_per_page": 10,
         "what": keyword,
-        "where": location,
+        
     }
 
     logging.debug("Fetching from Adzuna: %s with %s", url, params)
