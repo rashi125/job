@@ -23,7 +23,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="text-gray-900 sticky top-0 z-50 bg-graypurple-400/100 dark:bg-slate-900/60 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm w-screen overflow-x-hidden">
+        <header className="text-gray-900 sticky top-0 z-50 bg-graypurple-500/100 dark:bg-slate-900/60 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm w-screen overflow-x-hidden">
             <div className="max-w-7xl mx-auto px-6 sm:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* 🌈 Logo */}

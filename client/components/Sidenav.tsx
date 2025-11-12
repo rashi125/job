@@ -54,7 +54,7 @@ export const Sidenav: React.FC<SidenavProps> = ({ user }) => {
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.5 }}
-  className="ml-[0px] w-full md:w-[440px] lg:w-[500px] bg-gradient-to-b from-slate-700/20 via-graypurple-100/400 to-iron/800 
+  className="ml-[0px] w-full md:w-[440px] lg:w-[500px] bg-gradient-to-b from-slate-700/20 via-graypurple-200/400 to-iron/800 
   backdrop-blur-2xl rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-indigo-200/60 
   transition-all duration-500"
 >
