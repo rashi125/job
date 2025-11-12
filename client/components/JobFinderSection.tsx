@@ -71,7 +71,7 @@ export const JobFinderSection: React.FC = () => {
       </h2>
 
       {/* Search Inputs */}
-      <div className="mb-8 flex flex-col md:flex-row gap-4">
+      <div className="mb-8  justify-normal flex flex-col md:flex-row gap-x-0.5">
         <div className="relative flex-1">
           <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
@@ -87,7 +87,7 @@ export const JobFinderSection: React.FC = () => {
           placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="w-full md:w-1/3 px-4 py-3 rounded-lg border border-border bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w -[50px] md:w-1/3 px-4 py-3 rounded-lg border border-border bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <button
           onClick={fetchJobs}

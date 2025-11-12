@@ -56,7 +56,7 @@ export const Sidenav: React.FC<SidenavProps> = ({ user }) => {
         <div className="text-center mb-10">
           <motion.div
             whileHover={{ scale: 1.08 }}
-            className="w-36 h-36 mx-auto mb-4 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full 
+            className="w-36 h-36 mx-auto mb-4 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full 
             flex items-center justify-center shadow-lg border-4 border-white/60"
           >
             <span className="text-6xl text-white">👤</span>

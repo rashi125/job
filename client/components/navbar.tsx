@@ -50,8 +50,8 @@ const Header: React.FC = () => {
                     {/* Navigation Links */}
                     <nav className="hidden md:flex items-center gap-8">
                         {[
-                            ["About Us", "/about"],
-                            ["How it Works", "/career"],
+                        
+                            
                             ["AI-Setu", "/scan"],
                             ["Dairy", "/dashboard"],
                             ["Check-Performance", "/resources"],
