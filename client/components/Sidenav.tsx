@@ -51,15 +51,15 @@ export const Sidenav: React.FC<SidenavProps> = ({ user }) => {
   return (
     <>
       <motion.aside
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="w-full md:w-[440px] lg:w-[500px] bg-gradient-to-b from-indigo-500/20 via-purple-100/40 to-white/80 
-        backdrop-blur-2xl rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-indigo-200/60 
-        transition-all duration-500"
-      >
+  initial={{ x: -100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.5 }}
+  className="ml-[-105px] w-full md:w-[440px] lg:w-[500px] bg-gradient-to-b from-indigo-500/20 via-purple-100/40 to-white/80 
+  backdrop-blur-2xl rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-indigo-200/60 
+  transition-all duration-500"
+>
         {/* Profile Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 ">
           <motion.div
             whileHover={{ scale: 1.08 }}
             className="w-36 h-36 mx-auto mb-4 rounded-full flex items-center justify-center shadow-xl border-4 border-white/70 overflow-hidden bg-gradient-to-br from-indigo-600 to-purple-600"
