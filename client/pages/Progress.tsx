@@ -1,17 +1,11 @@
+"use client";
 import { useEffect, useState } from "react";
 import { auth, db } from "@/components/firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-    ResponsiveContainer,
-    BarChart,
-    Bar,
+    LineChart, Line, XAxis, YAxis,
+    CartesianGrid, Tooltip, Legend,
+    ResponsiveContainer, BarChart, Bar,
 } from "recharts";
 
 interface QuizData {
@@ -19,7 +13,8 @@ interface QuizData {
     level: string;
     score: number;
     total: number;
-    timestamp: string;
+    percent: number;
+    date: string;
 }
 
 export default function ProgressReport() {
@@ -27,25 +22,42 @@ export default function ProgressReport() {
     const [viewType, setViewType] = useState<"line" | "bar">("line");
 
     useEffect(() => {
-        const fetchScores = async () => {
-            const user = auth.currentUser;
-            if (!user) return;
+        const unsubscribe = auth.onAuthStateChanged(async (user) => {
+            if (!user) {
+                console.log("No user logged in");
+                return;
+            }
 
-            const quizRef = collection(db, "users", user.uid, "quizzes");
+            console.log("User detected:", user.uid);
+
+            const quizRef = query(
+                collection(db, "users", user.uid, "quizzes"),
+                orderBy("timestamp", "asc")
+            );
+
             const snapshot = await getDocs(quizRef);
+
+            console.log("Docs found:", snapshot.size);
+
             const quizData: QuizData[] = snapshot.docs.map((doc) => {
                 const d = doc.data();
+                console.log("Doc:", d);
                 return {
-                    course: d.course || "Unknown",
-                    level: d.level || "N/A",
-                    score: d.score || 0,
-                    total: d.total || 10,
-                    timestamp: new Date(d.timestamp?.seconds * 1000).toLocaleDateString(),
+                    course: d.course,
+                    level: d.level,
+                    score: d.score,
+                    total: d.total,
+                    percent: Math.round((d.score / d.total) * 100),
+                    date: d.timestamp?.seconds
+                        ? new Date(d.timestamp.seconds * 1000).toLocaleDateString()
+                        : "N/A",
                 };
             });
+
             setData(quizData);
-        };
-        fetchScores();
+        });
+
+        return () => unsubscribe();
     }, []);
 
     return (
@@ -57,17 +69,18 @@ export default function ProgressReport() {
             <div className="mb-6">
                 <button
                     className={`px-4 py-2 rounded-l-lg ${viewType === "line"
-                            ? "bg-purple-600 text-white"
-                            : "bg-gray-200 text-gray-800"
+                        ? "bg-purple-600 text-white"
+                        : "bg-gray-200 text-gray-800"
                         }`}
                     onClick={() => setViewType("line")}
                 >
                     Line Chart
                 </button>
+
                 <button
                     className={`px-4 py-2 rounded-r-lg ${viewType === "bar"
-                            ? "bg-purple-600 text-white"
-                            : "bg-gray-200 text-gray-800"
+                        ? "bg-purple-600 text-white"
+                        : "bg-gray-200 text-gray-800"
                         }`}
                     onClick={() => setViewType("bar")}
                 >
@@ -81,25 +94,26 @@ export default function ProgressReport() {
                         {viewType === "line" ? (
                             <LineChart data={data}>
                                 <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="course" />
-                                <YAxis domain={[0, 10]} />
+                                <XAxis dataKey="date" />   {/* ✅ Date on X-axis */}
+                                <YAxis domain={[0, 100]} />
                                 <Tooltip />
                                 <Legend />
                                 <Line
                                     type="monotone"
-                                    dataKey="score"
+                                    dataKey="percent"
                                     stroke="#8b5cf6"
                                     activeDot={{ r: 8 }}
+                                    name="Score %"
                                 />
                             </LineChart>
                         ) : (
                             <BarChart data={data}>
                                 <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="course" />
-                                <YAxis domain={[0, 10]} />
+                                <XAxis dataKey="date" />
+                                <YAxis domain={[0, 100]} />
                                 <Tooltip />
                                 <Legend />
-                                <Bar dataKey="score" fill="#8b5cf6" />
+                                <Bar dataKey="percent" fill="#8b5cf6" name="Score %" />
                             </BarChart>
                         )}
                     </ResponsiveContainer>

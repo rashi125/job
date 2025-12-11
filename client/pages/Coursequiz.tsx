@@ -350,7 +350,7 @@ export default function CourseQuiz() {
             // ✅ Save to Firestore
             const user = auth.currentUser;
             if (user) {
-                const quizRef = collection(db, "users", user.uid, "course_quizzes");
+                const quizRef = collection(db, "users", user.uid, "quizzes");
                 await addDoc(quizRef, {
                     course,
                     level,
@@ -419,7 +419,7 @@ export default function CourseQuiz() {
                     </div>
                 </div>
 
-                <style jsx>{`
+                <style>{`
           @keyframes fadeIn {
             from {
               opacity: 0;

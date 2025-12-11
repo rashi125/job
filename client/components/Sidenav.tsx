@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import { signOut, User } from "firebase/auth";
 import { auth, db } from "@/components/firebaseConfig";
 import { doc, onSnapshot, setDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import {  ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, Award, FolderOpen, LogOut, Edit3 } from "lucide-react";
-
-const storage = getStorage();
+import { storage } from "@/components/firebaseConfig";
 
 interface SidenavProps {
   user: User | null;
 }
-
 export const Sidenav: React.FC<SidenavProps> = ({ user }) => {
   const navigate = useNavigate();
   const [profile, setProfile] = useState<any>(null);
@@ -197,30 +195,43 @@ function EditProfileModal({ user, profile, close }: any) {
   };
 
   const saveProfile = async () => {
+    if (!user) {
+      alert("User not logged in");
+      return;
+    }
+
     const userDoc = doc(db, "users", user.uid);
     let imageUrl = profile?.photoURL || "";
 
-    if (image) {
-      const imageRef = ref(storage, `profileImages/${user.uid}.jpg`);
-      await uploadBytes(imageRef, image);
-      imageUrl = await getDownloadURL(imageRef);
-    }
+    try {
+      if (image) {
+        const imageRef = ref(storage, `profileImages/${user.uid}.jpg`);
+        await uploadBytes(imageRef, image);
+        imageUrl = await getDownloadURL(imageRef); // ✅ Correct assignment (NOT const)
+      }
 
-    await setDoc(
-      userDoc,
-      {
-        name,
-        country,
-        photoURL: imageUrl,
-        skills: skills.split(",").map((s) => s.trim()).filter(Boolean),
-        jobs: jobs.split(",").map((j) => j.trim()).filter(Boolean),
-        achievements: achievements.split(",").map((a) => a.trim()).filter(Boolean),
-        projects: projects.split(",").map((p) => p.trim()).filter(Boolean),
-      },
-      { merge: true }
-    );
-    close();
+      await setDoc(
+        userDoc,
+        {
+          name,
+          country,
+          photoURL: imageUrl, // ✅ Correct photoURL saved
+          skills: skills.split(",").map((s) => s.trim()).filter(Boolean),
+          jobs: jobs.split(",").map((j) => j.trim()).filter(Boolean),
+          achievements: achievements.split(",").map((a) => a.trim()).filter(Boolean),
+          projects: projects.split(",").map((p) => p.trim()).filter(Boolean),
+        },
+        { merge: true }
+      );
+
+      alert("✅ Profile Saved Successfully");
+      close();
+    } catch (error: any) {
+      console.error("❌ FIRESTORE SAVE FAILED:", error);
+      alert("❌ Profile save failed. Check console for details.");
+    }
   };
+
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn">

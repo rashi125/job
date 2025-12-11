@@ -147,6 +147,7 @@ export const JobFinderSection: React.FC = () => {
                   View Job
                 </a>
               </div>
+              
             </div>
           ))}
 
