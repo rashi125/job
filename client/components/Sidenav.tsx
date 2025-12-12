@@ -101,7 +101,7 @@ export const Sidenav: React.FC<SidenavProps> = ({ user }) => {
   </div>
 
   {/* RIGHT SIDE */}
-  <div className="w-[60%] space-y-6 overflow-y-auto max-h-[80vh] pr-3">
+  <div className="w-[60%] space-y-6 overflow-y-auto max-h-[80vh] pr-3 flex flex-wrap justify-start items-center gap-3 ">
     <Section title="Skills">
       <BadgeList list={profile?.skills} color="indigo" />
     </Section>
