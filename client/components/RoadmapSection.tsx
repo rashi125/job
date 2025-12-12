@@ -141,37 +141,38 @@ export const RoadmapSection: React.FC = () => {
         </div>
 
         {/* Carousel */}
-        <div className="w-full flex-shrink-0">
-          <Slider {...sliderSettings}>
-            {roadmaps.map((roadmap, idx) => (
-              <div key={idx} className="px-4">
-                <div
-                  onClick={() => navigate(roadmap.path)}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:scale-105 transition-transform cursor-pointer"
-                >
-                  <div
-                    className={`h-48 bg-gradient-to-br ${roadmap.bgColor} relative`}
-                  >
-                    <img
-                      src={roadmap.image}
-                      alt={roadmap.title}
-                      className="w-full h-full object-cover opacity-70"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-serif font-bold text-lg text-sidebar-foreground mb-2">
-                      {roadmap.icon} {roadmap.title}
-                    </h3>
-                    <p className="text-sm text-sidebar-accent-foreground leading-relaxed">
-                      {roadmap.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
+       <div className="w-full flex-shrink-0 mt-10 px-4">  {/* Added margin-top + horizontal padding */}
+  <Slider {...sliderSettings}>
+    {roadmaps.map((roadmap, idx) => (
+      <div key={idx} className="px-6">  {/* Increased gap between cards */}
+        <div
+          onClick={() => navigate(roadmap.path)}
+          className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-transform cursor-pointer"
+        >
+          <div
+            className={`h-52 bg-gradient-to-br ${roadmap.bgColor} relative`}  
+          >
+            <img
+              src={roadmap.image}
+              alt={roadmap.title}
+              className="w-full h-full object-cover opacity-80 rounded-t-xl"  
+            />
+          </div>
+
+          <div className="p-5"> {/* Increased padding for cleaner UI */}
+            <h3 className="font-serif font-bold text-lg text-sidebar-foreground mb-2">
+              {roadmap.icon} {roadmap.title}
+            </h3>
+            <p className="text-sm text-sidebar-accent-foreground leading-relaxed">
+              {roadmap.description}
+            </p>
+          </div>
         </div>
       </div>
+    ))}
+  </Slider>
+</div>
+    </div>
     </section>
   );
 };

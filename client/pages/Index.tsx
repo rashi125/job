@@ -33,19 +33,24 @@ export default function Index() {
   }
 
   return (
-    <div className="min-h-screen w-screen overflow-x-hidden bg-graypurple-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:transform lg:-translate-x-[110px]">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Sidebar */}
-          <Sidenav user={user} />
+   <div className="min-h-screen w-screen overflow-x-hidden bg-graypurple-200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:transform lg:-translate-x-[110px]">
 
-          {/* Main Content */}
-          <div className="flex-1 space-y-12">
-            <RoadmapSection />
-            <JobFinderSection />
-          </div>
-        </div>
+    {/* Layout changed here */}
+    <div className="flex flex-col gap-8">
+
+      {/* Sidebar on top */}
+      <Sidenav user={user} />
+
+      {/* Content below */}
+      <div className="flex-1 space-y-12">
+        <RoadmapSection />
+        <JobFinderSection />
       </div>
+
     </div>
+  </div>
+</div>
+
   );
 }

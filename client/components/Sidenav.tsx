@@ -48,75 +48,78 @@ export const Sidenav: React.FC<SidenavProps> = ({ user }) => {
 
   return (
     <>
-      <motion.aside
+     <motion.aside
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.5 }}
-  className="ml-[0px] w-full md:w-[440px] lg:w-[500px] bg-gradient-to-b from-slate-500/20 via-graypurple-200/400 to-iron/800 
+  className="w-full flex flex-row items-start gap-6 bg-gradient-to-b from-slate-500/20 via-graypurple-200/400 to-iron/800 
   backdrop-blur-2xl rounded-3xl p-8 shadow-xl border border-white/50 hover:shadow-indigo-200/60 
   transition-all duration-500"
 >
-        {/* Profile Header */}
-        <div className="text-center mb-10 ">
-          <motion.div
-            whileHover={{ scale: 1.08 }}
-            className="w-36 h-36 mx-auto mb-4 rounded-full flex items-center justify-center shadow-xl border-4 border-black/50 overflow-hidden bg-gradient-to-br from-blue-400 to-graypurple-400"
-          >
-            {profile?.photoURL ? (
-              <img
-                src={profile.photoURL}
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <span className="text-6xl text-white">👤</span>
-            )}
-          </motion.div>
+  {/* LEFT SIDE */}
+  <div className="w-[40%] flex flex-col items-center text-center">
+    <motion.div
+      whileHover={{ scale: 1.08 }}
+      className="w-36 h-36 mx-auto mb-4 rounded-full flex items-center justify-center shadow-xl border-4 border-black/50 overflow-hidden bg-gradient-to-br from-blue-400 to-graypurple-400"
+    >
+      {profile?.photoURL ? (
+        <img
+          src={profile.photoURL}
+          alt="Profile"
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <span className="text-6xl text-white">👤</span>
+      )}
+    </motion.div>
 
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
-            {profile?.name || "User"}
-          </h2>
-          <p className="text-sm text-gray-700">{profile?.email}</p>
-          <p className="text-xs mt-1 text-gray-500 italic">
-            {profile?.country || "Not added"}
-          </p>
+    <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+      {profile?.name || "User"}
+    </h2>
+    <p className="text-sm text-gray-700">{profile?.email}</p>
+    <p className="text-xs mt-1 text-gray-500 italic">
+      {profile?.country || "Not added"}
+    </p>
 
-          <div className="flex flex-col gap-3 mt-6">
-            <button
-              onClick={() => setShowEdit(true)}
-              className="py-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-xl transition-all
-              shadow-md hover:shadow-indigo-300/50 flex items-center justify-center gap-2"
-            >
-              <Edit3 className="w-4 h-4" /> Edit Profile
-            </button>
+    <div className="flex flex-col gap-3 mt-6 w-full">
+      <button
+        onClick={() => setShowEdit(true)}
+        className="py-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-xl transition-all
+        shadow-md hover:shadow-indigo-300/50 flex items-center justify-center gap-2"
+      >
+        <Edit3 className="w-4 h-4" /> Edit Profile
+      </button>
 
-            <button
-              onClick={handleLogout}
-              className="py-2 w-full bg-red-500 hover:bg-red-600 text-white text-sm font-medium rounded-xl transition-all
-              shadow-md hover:shadow-red-300/50 flex items-center justify-center gap-2"
-            >
-              <LogOut className="w-4 h-4" /> Logout
-            </button>
-          </div>
-        </div>
+      <button
+        onClick={handleLogout}
+        className="py-2 w-full bg-red-500 hover:bg-red-600 text-white text-sm font-medium rounded-xl transition-all
+        shadow-md hover:shadow-red-300/50 flex items-center justify-center gap-2"
+      >
+        <LogOut className="w-4 h-4" /> Logout
+      </button>
+    </div>
+  </div>
 
-        {/* Profile Sections */}
-        <Section title="Skills">
-          <BadgeList list={profile?.skills} color="indigo" />
-        </Section>
+  {/* RIGHT SIDE */}
+  <div className="w-[60%] space-y-6 overflow-y-auto max-h-[80vh] pr-3">
+    <Section title="Skills">
+      <BadgeList list={profile?.skills} color="indigo" />
+    </Section>
 
-        <Section title="Completed Jobs">
-          <EmojiList list={profile?.jobs} emoji="💼" />
-        </Section>
+    <Section title="Completed Jobs">
+      <EmojiList list={profile?.jobs} emoji="💼" />
+    </Section>
 
-        <Section title="Achievements">
-          <EmojiList list={profile?.achievements} emoji="🏆" />
-        </Section>
+    <Section title="Achievements">
+      <EmojiList list={profile?.achievements} emoji="🏆" />
+    </Section>
 
-        <Section title="Projects">
-          <EmojiList list={profile?.projects} emoji="🚀" />
-        </Section>
-      </motion.aside>
+    <Section title="Projects">
+      <EmojiList list={profile?.projects} emoji="🚀" />
+    </Section>
+  </div>
+</motion.aside>
+
 
       {showEdit && (
         <EditProfileModal
